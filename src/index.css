@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.theme-classic {
+  --bg-primary: theme(--color-gray-100);
+  --bg-secondary: theme(--color-gray-300);
+
+  --text-primary: theme(--color-black);
+  --text-secondary: theme(--color-gray-600);
+
+  --button-primary: theme(--color-blue-600);
+  --button-secondary: theme(--color-blue-800);
+
+  --font-base: Inter, sans-serif;
+}
+
+.theme-dark {
+  --bg-primary: theme(--color-gray-800);
+  --bg-secondary: theme(--color-gray-300);
+
+  --text-primary: theme(--color-gray-50);
+  --text-secondary: theme(--color-gray-400);
+
+  --button-primary: theme(--color-indigo-500);
+  --button-secondary: theme(--color-indigo-600);
+  --font-base: Inter, sans-serif;
+}
+
+.theme-nature {
+  --bg-primary: theme(--color-green-100);
+  --bg-secondary: theme(--color-green-200);
+
+  --text-primary: theme(--color-green-300);
+  --text-secondary: theme(--color-green-400);
+
+  --button-primary: theme(--color-green-600);
+  --button-secondary: theme(--color-green-700);
+  --font-base: Inter, sans-serif;
+}
+
+.theme-neutral {
+  --bg-primary: theme(--color-gray-100);
+  --bg-secondary: theme(--color-gray-200);
+
+  --text-primary: theme(--color-gray-900);
+  --text-secondary: theme(--color-gray-700);
+
+  --button-primary: theme(--color-blue-600);
+  --button-secondary: theme(--color-blue-700);
+  --font-base: Inter, sans-serif;
+}
+
+.theme-sunset {
+  --bg-primary: theme(--color-orange-100);
+  --bg-secondary: theme(--color-orange-300);
+
+  --text-primary: theme(--color-orange-900);
+  --text-secondary: theme(--color-orange-700);
+
+  --button-primary: theme(--color-orange-600);
+  --button-secondary: theme(--color-orange-700);
+  --font-base: Inter, sans-serif;
+}
