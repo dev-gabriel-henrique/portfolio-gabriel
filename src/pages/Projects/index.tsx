@@ -1,13 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { Title } from "../../components/Title";
 
 export function Projects() {
+  const { t } = useTranslation("projects");
+
   const projects = [
     {
-      title: "Ignite Call",
-      description:
-        "Sistema de agendamento de reuniões integrado com o google calendar, foi utilizado a integração com o Google Services",
+      key: "igniteCall",
       techs: [
         "React",
         "Next.Js",
@@ -20,9 +21,7 @@ export function Projects() {
       link: "https://github.com/dev-gabriel-henrique/ignite-call",
     },
     {
-      title: "API Restaurant",
-      description:
-        "API RESTful desenvolvida em Node.js + TypeScript com o objetivo de gerenciar funcionalidades essenciais de um sistema de restaurante.",
+      key: "apiRestaurant",
       techs: [
         "Express.Js",
         "Node.Js",
@@ -34,9 +33,7 @@ export function Projects() {
       link: "https://github.com/dev-gabriel-henrique/api-restaurant",
     },
     {
-      title: "Coffee Delivery",
-      description:
-        "Coffee Delivery é uma aplicação frontend desenvolvida com React, TypeScript e Vite que simula um sistema de delivery de cafés. A aplicação permite que o usuário visualize os produtos disponíveis, adicione itens ao carrinho, gerencie quantidades e finalize um pedido informando o endereço de entrega. O projeto foi construído com foco em experiência do usuário, organização de código e boas práticas de desenvolvimento frontend, utilizando tipagem estática, componentes reutilizáveis e gerenciamento de estado global.",
+      key: "coffeeDelivery",
       techs: [
         "React",
         "Styled-Components",
@@ -50,14 +47,14 @@ export function Projects() {
 
   return (
     <Container>
-      <Title>Projetos</Title>
+      <Title>{t("title")}</Title>
 
       <div className="space-y-12">
         {projects.map((project, index) => (
           <div key={index} className="group">
             <div className="flex items-start justify-between gap-4">
               <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[var(--text-secondary)] transition-colors">
-                {project.title}
+                {t(`items.${project.key}.title`)}
               </h3>
 
               {project.link && (
@@ -67,13 +64,15 @@ export function Projects() {
                   rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
                 >
-                  Ver
+                  {t("view")}
                 </a>
               )}
             </div>
 
             <p className="mt-2 text-gray-700 leading-relaxed">
-              {project.description}
+              <p className="mt-2 text-gray-700 leading-relaxed">
+                {t(`items.${project.key}.description`)}
+              </p>
             </p>
 
             <ul className="mt-3 flex flex-wrap gap-3">

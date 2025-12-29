@@ -4,6 +4,10 @@ import navbarPT from "../locales/pt/navbar.json";
 import navbarEN from "../locales/en/navbar.json";
 import homePT from "../locales/pt/home.json";
 import homeEN from "../locales/en/home.json";
+import aboutEN from "../locales/en/about.json";
+import aboutPT from "../locales/pt/about.json";
+import projectsPT from "../locales/pt/projects.json";
+import projectsEN from "../locales/en/projects.json";
 
 import { initReactI18next } from "react-i18next";
 
@@ -13,17 +17,20 @@ const resources = {
   en: {
     navbar: navbarEN,
     home: homeEN,
+    about: aboutEN,
+    projects: projectsEN,
   },
   pt: {
     navbar: navbarPT,
     home: homePT,
+    about: aboutPT,
+    projects: projectsPT,
   },
 };
 
 i18n.use(initReactI18next).init({
   resources,
   lng: "pt",
-  ns: ["navbar"],
   interpolation: {
     escapeValue: false,
   },

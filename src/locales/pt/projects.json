@@ -1,0 +1,18 @@
+{
+  "title": "Projetos",
+  "view": "Ver",
+  "items": {
+    "igniteCall": {
+      "title": "Ignite Call",
+      "description": "Sistema de agendamento de reuniões integrado com o Google Calendar, utilizando integração com os serviços do Google."
+    },
+    "apiRestaurant": {
+      "title": "API Restaurant",
+      "description": "API RESTful desenvolvida em Node.js + TypeScript com o objetivo de gerenciar funcionalidades essenciais de um sistema de restaurante."
+    },
+    "coffeeDelivery": {
+      "title": "Coffee Delivery",
+      "description": "Coffee Delivery é uma aplicação frontend desenvolvida com React, TypeScript e Vite que simula um sistema de delivery de cafés. A aplicação permite visualizar produtos, adicionar itens ao carrinho, gerenciar quantidades e finalizar pedidos com endereço de entrega. O projeto foi construído com foco em experiência do usuário, organização de código e boas práticas de desenvolvimento frontend."
+    }
+  }
+}
