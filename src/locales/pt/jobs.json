@@ -1,0 +1,17 @@
+{
+  "title": "Experiências",
+  "items": {
+    "nx": {
+      "company": "NX Multiserviços",
+      "period": "Nov 2024 — Presente",
+      "role": "Desenvolvedor Front-End Pleno",
+      "description": "Contribuo na criação de soluções corporativas escaláveis e bem estruturadas. Lidero a integração entre front-end e back-end e apoio o time com práticas de código limpo e performance."
+    },
+    "anom1": {
+      "company": "Freelancer",
+      "period": "Nov 2024 — Presente",
+      "role": "Desenvolvedor Front-End Junior",
+      "description": "Atuei principalmente na integração entre o back-end e o front-end, garantindo consistência, performance e confiabilidade nas entregas, além de realizar correções e melhorias de usabilidade para aprimorar a experiência do usuário."
+    }
+  }
+}

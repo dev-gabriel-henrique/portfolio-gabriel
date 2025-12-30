@@ -1,0 +1,17 @@
+{
+  "title": "Jobs",
+  "items": {
+    "nx": {
+      "company": "NX Multiserviços",
+      "period": "Nov 2024 — Present",
+      "role": "Mid-Level Front-End Developer",
+      "description": "I contribute to the design and development of scalable, well-architected enterprise solutions, leading front-end and back-end integrations while supporting the team with clean code and performance-driven best practices."
+    },
+    "anom1": {
+      "company": "Freelancer",
+      "period": "Nov 2024 — Present",
+      "role": "Junior Front-End Developer",
+      "description": "I primarily worked on front-end and back-end integration, ensuring consistency, performance, and reliability across deliveries, while also implementing usability fixes and improvements to enhance the user experience."
+    }
+  }
+}

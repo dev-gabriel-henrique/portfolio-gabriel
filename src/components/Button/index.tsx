@@ -16,7 +16,7 @@ export const Button: React.FC<IButton> = ({
   ...props
 }: IButton) => {
   const baseClasses =
-    "font-medium rounded transition-colors focus:ring-2 cursor-pointer";
+    "font-medium rounded transition-outline cursor-pointer";
 
   const variantClasses: Record<TVariant, string> = {
     primary: ` 
@@ -24,7 +24,6 @@ export const Button: React.FC<IButton> = ({
       text-[var(--text-primary)] 
       hover:bg-[var(--button-secondary)] 
       hover:text-[var(--text-secondary)]
-      focus:ring-blue-400
       `,
     secondary: `
       bg-[var(--button-secondary)] 

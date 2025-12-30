@@ -20,22 +20,18 @@ export const Title: React.FC<ITitle> = ({
   withMargin = true,
   bold = true,
 }) => {
-  const baseClasses = ` ${withMargin ? "mb-8" : ""}
-  ${bold ? "font-bold" : ""} tracking-tight";
+  const baseClasses = `${withMargin ? "mb-8" : ""}
+  ${bold ? "font-bold" : ""} tracking-tight text-[var(--text-primary)] 
   `;
 
   const variantClasses: Record<TVariant, string> = {
     primary: ` 
-      text-[var(--text-primary)] 
-      hover:text-[var(--text-secondary)]
       `,
     secondary: `
       text-[var(--text-secondary)] 
-      hover:text-[var(--text-secondary)]
       `,
     outline: `
       text-[var(--text-primary)]
-      hover:text-[var(--text-secondary)]
     `,
   };
 

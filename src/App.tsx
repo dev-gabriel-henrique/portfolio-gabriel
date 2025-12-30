@@ -1,8 +1,8 @@
-import { NavBar } from "./components/NavBar";
+import { Sidebar } from "./components/Sidebar";
 import { ThemesSection } from "./components/ThemesSection";
 import ThemeProvider from "./contexts/ThemeProvider";
 import { About } from "./pages/About";
-import { Experiences } from "./pages/Experiences";
+import { Jobs } from "./pages/Jobs";
 import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
 
@@ -10,11 +10,11 @@ function App() {
   return (
     <ThemeProvider>
       <ThemesSection />
-      <NavBar />
       <Home />
       <About />
-      <Experiences />
+      <Jobs />
       <Projects />
+      <Sidebar />
     </ThemeProvider>
   );
 }

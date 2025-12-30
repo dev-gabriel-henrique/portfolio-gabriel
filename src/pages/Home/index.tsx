@@ -2,8 +2,11 @@ import { useTranslation } from "react-i18next";
 import { Container } from "../../components/Container";
 import { Avatar } from "../../components/Avatar";
 
-import profile from "../../assets/profile.jpg";
 import { Title } from "../../components/Title";
+import { Slider } from "../../components/Slider";
+import { techs } from "../../constants/TECHS";
+
+import profile from "../../assets/profile.jpg";
 
 export function Home() {
   const { t } = useTranslation("home");
@@ -19,15 +22,12 @@ export function Home() {
           {t("dev")}
         </Title>
 
-        <p className="max-w-md text-lg text-neutral-600 dark:text-neutral-400">
+        <p className="max-w-md text-lg text-[var(--text-secondary)]">
           {t("apresentacao")}
         </p>
 
-        <div className="flex gap-4 mt-4 text-lg font-medium opacity-80">
-          <span>React</span>
-          <span>TypeScript</span>
-          <span>Next.js</span>
-          <span>Tailwind</span>
+        <div className="max-w-md">
+          <Slider items={techs} />
         </div>
       </div>
 

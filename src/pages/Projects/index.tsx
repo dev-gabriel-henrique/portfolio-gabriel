@@ -46,33 +46,33 @@ export function Projects() {
   ];
 
   return (
-    <Container>
+    <Container className="mb-8">
       <Title>{t("title")}</Title>
 
       <div className="space-y-12">
         {projects.map((project, index) => (
           <div key={index} className="group">
             <div className="flex items-start justify-between gap-4">
-              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[var(--text-secondary)] transition-colors">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--text-secondary)] transition-colors">
                 {t(`items.${project.key}.title`)}
-              </h3>
+              </h2>
 
               {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+                  className="text-sm text-[var(--text-secondary)] hover:underline transition-colors"
                 >
                   {t("view")}
                 </a>
               )}
             </div>
 
-            <p className="mt-2 text-gray-700 leading-relaxed">
-              <p className="mt-2 text-gray-700 leading-relaxed">
+            <p className="mt-2 text-[var(--text-secondary)] leading-relaxed">
+              <span className="mt-2 text-[var(--text-secondary)] leading-relaxed">
                 {t(`items.${project.key}.description`)}
-              </p>
+              </span>
             </p>
 
             <ul className="mt-3 flex flex-wrap gap-3">
@@ -85,8 +85,8 @@ export function Projects() {
               ))}
             </ul>
 
-            {index !== projects.length && (
-              <div className="mt-6 border-b border-gray-200" />
+            {index !== projects.length - 1 && (
+              <div className="mt-6 border-b border-[var(--line-primary)]" />
             )}
           </div>
         ))}

@@ -5,40 +5,56 @@ body {
   color: var(--text-primary);
 }
 
+*:focus {
+  outline: 2px solid var(--line-primary);
+  outline-offset: 2px;
+}
+
 .theme-classic {
   --bg-primary: theme(--color-gray-100);
-  --bg-secondary: theme(--color-gray-300);
+  --bg-secondary: theme(--color-gray-200);
 
-  --text-primary: theme(--color-black);
-  --text-secondary: theme(--color-gray-600);
+  --text-primary: theme(--color-gray-900);
+  --text-secondary: theme(--color-gray-800);
 
-  --button-primary: theme(--color-blue-600);
-  --button-secondary: theme(--color-blue-800);
+  --button-primary: theme(--color-blue-400);
+  --button-secondary: theme(--color-blue-500);
+
+  --line-primary: theme(--color-blue-700);
+  --line-secondary: theme(--color-blue-400);
 
   --font-base: Inter, sans-serif;
 }
 
 .theme-dark {
-  --bg-primary: theme(--color-gray-800);
-  --bg-secondary: theme(--color-gray-300);
+  --bg-primary: theme(--color-gray-900);
+  --bg-secondary: theme(--color-gray-800);
 
   --text-primary: theme(--color-gray-50);
-  --text-secondary: theme(--color-gray-400);
+  --text-secondary: theme(--color-gray-200);
 
   --button-primary: theme(--color-indigo-500);
   --button-secondary: theme(--color-indigo-600);
+
+  --line-primary: theme(--color-indigo-400);
+  --line-secondary: theme(--color-indigo-200);
+
   --font-base: Inter, sans-serif;
 }
 
 .theme-nature {
-  --bg-primary: theme(--color-green-100);
-  --bg-secondary: theme(--color-green-200);
+  --bg-primary: theme(--color-emerald-50);
+  --bg-secondary: theme(--color-emerald-100);
 
-  --text-primary: theme(--color-green-300);
-  --text-secondary: theme(--color-green-400);
+  --text-primary: theme(--color-gray-900);
+  --text-secondary: theme(--color-gray-700);
 
-  --button-primary: theme(--color-green-600);
-  --button-secondary: theme(--color-green-700);
+  --button-primary: theme(--color-emerald-600);
+  --button-secondary: theme(--color-emerald-700);
+
+  --line-primary: theme(--color-emerald-800);
+  --line-secondary: theme(--color-emerald-600);
+
   --font-base: Inter, sans-serif;
 }
 
@@ -46,22 +62,43 @@ body {
   --bg-primary: theme(--color-gray-100);
   --bg-secondary: theme(--color-gray-200);
 
-  --text-primary: theme(--color-gray-900);
+  --text-primary: theme(--color-gray-800);
   --text-secondary: theme(--color-gray-700);
 
-  --button-primary: theme(--color-blue-600);
-  --button-secondary: theme(--color-blue-700);
+  --button-primary: theme(--color-slate-200);
+  --button-secondary: theme(--color-slate-700);
+
+  --line-primary: theme(--color-slate-900);
+  --line-secondary: theme(--color-slate-700);
+
   --font-base: Inter, sans-serif;
 }
 
 .theme-sunset {
-  --bg-primary: theme(--color-orange-100);
-  --bg-secondary: theme(--color-orange-300);
+  --bg-primary: theme(--color-orange-50);
+  --bg-secondary: theme(--color-orange-100);
 
-  --text-primary: theme(--color-orange-900);
-  --text-secondary: theme(--color-orange-700);
+  --text-primary: theme(--color-gray-900);
+  --text-secondary: theme(--color-gray-800);
 
-  --button-primary: theme(--color-orange-600);
-  --button-secondary: theme(--color-orange-700);
+  --button-primary: theme(--color-orange-300);
+  --button-secondary: theme(--color-orange-400);
+
+  --line-primary: theme(--color-orange-500);
+  --line-secondary: theme(--color-orange-300);
+
   --font-base: Inter, sans-serif;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll linear infinite;
 }

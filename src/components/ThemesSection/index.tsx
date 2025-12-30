@@ -38,24 +38,43 @@ export function ThemesSection() {
     }
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [isOpen]);
+
   return (
     <nav
-      hidden={!isOpen}
+      aria-hidden={!isOpen}
       className={`
-        overflow-hidden transition-[max-height,opacity] duration-800 ease-in-out
-        bg-[var(--bg-secondary)] p-4
-        ${isOpen ? "max-h-96 opacity-100" : "opacity-0"}
-      `}
+            bg-[var(--bg-secondary)] p-4 transition-all duration-300 ease-in-out
+        ${
+          isOpen
+            ? "max-h-96 opacity-100 translate-y-0"
+            : "max-h-0 opacity-0 -translate-y-20 pointer-events-none"
+        }
+            `}
     >
       <ul className="flex gap-1 flex-wrap justify-between items-center">
-        {themes.map((theme) => (
-          <ThemeCard
+        {themes.map((theme, index) => (
+          <div
             key={theme.id}
-            id={theme.id}
-            name={theme.name}
-            theme={theme.theme}
-            onSelect={handleSelect}
-          />
+            style={{ transitionDelay: `${index * 40}ms` }}
+            className={`
+                        transition-all duration-300
+                        ${
+                          isOpen
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-2"
+                        }
+                        `}
+          >
+            <ThemeCard {...theme} onSelect={handleSelect} />
+          </div>
         ))}
       </ul>
     </nav>
