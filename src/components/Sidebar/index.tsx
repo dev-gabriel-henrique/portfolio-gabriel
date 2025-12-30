@@ -42,40 +42,76 @@ export function Sidebar() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-8 hidden flex-col items-center gap-6 md:flex">
-      <ul className="flex flex-col items-center gap-6">
-        {socialLinks.map((social) => (
-          <li key={social.id}>
-            <a
-              href={social.link}
-              aria-label={social.id}
-              className="text-[var(--line-primary)] hover:-translate-y-1 hover:text-[var(--line-secondary)] transition-all"
-              target="_blank"
-              rel="noopener noreferrer"
+    <>
+      <div className="fixed bottom-0 left-0 right-0 flex xl:hidden justify-center z-50">
+        <ul className="flex items-center gap-4 sm:gap-6 px-6 py-3 sm:py-4 bg-[var(--bg-primary)] backdrop-blur border-t border-[var(--line-primary)] rounded-t-2xl w-full justify-center">
+          {socialLinks.map((social) => (
+            <li key={social.id}>
+              <a
+                href={social.link}
+                aria-label={social.id}
+                className="text-[var(--line-primary)] hover:-translate-y-1 hover:text-[var(--line-secondary)] transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {social.component}
+              </a>
+            </li>
+          ))}
+          <li>
+            <span
+              onClick={toogleSection}
+              className="text-[var(--line-primary)] cursor-pointer hover:text-[var(--line-secondary)]"
             >
-              {social.component}
-            </a>
+              <PaletteIcon size={20} aria-label="Themes" />
+            </span>
           </li>
-        ))}
-        <li>
-          <span
-            onClick={toogleSection}
-            className="text-[var(--line-primary)] cursor-pointer hover:text-[var(--line-secondary)]"
-          >
-            <PaletteIcon size={24} aria-label="Themes" />
-          </span>
-        </li>
-        <li>
-          <span
-            onClick={() => changeLanguage()}
-            className="text-[var(--line-primary)] cursor-pointer hover:text-[var(--line-secondary)]"
-          >
-            <TranslateIcon size={24} aria-label="Translator" />
-          </span>
-        </li>
-      </ul>
+          <li>
+            <span
+              onClick={() => changeLanguage()}
+              className="text-[var(--line-primary)] cursor-pointer hover:text-[var(--line-secondary)]"
+            >
+              <TranslateIcon size={20} aria-label="Translator" />
+            </span>
+          </li>
+        </ul>
+      </div>
 
-      <div className="mt-6 h-24 w-px bg-[var(--line-primary)]" />
-    </div>
+      <div className="fixed bottom-0 left-8 hidden flex-col items-center gap-6 xl:flex">
+        <ul className="flex flex-col items-center gap-6">
+          {socialLinks.map((social) => (
+            <li key={social.id}>
+              <a
+                href={social.link}
+                aria-label={social.id}
+                className="text-[var(--line-primary)] hover:-translate-y-1 hover:text-[var(--line-secondary)] transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {social.component}
+              </a>
+            </li>
+          ))}
+          <li>
+            <span
+              onClick={toogleSection}
+              className="text-[var(--line-primary)] cursor-pointer hover:text-[var(--line-secondary)]"
+            >
+              <PaletteIcon size={24} aria-label="Themes" />
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => changeLanguage()}
+              className="text-[var(--line-primary)] cursor-pointer hover:text-[var(--line-secondary)]"
+            >
+              <TranslateIcon size={24} aria-label="Translator" />
+            </span>
+          </li>
+        </ul>
+
+        <div className="mt-6 h-24 w-px bg-[var(--line-primary)]" />
+      </div>
+    </>
   );
 }

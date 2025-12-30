@@ -19,7 +19,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   const sizeClasses = {
     sm: "w-8 h-8",
     md: "w-12 h-12",
-    lg: "w-72 h-72",
+    lg: "w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-64 lg:h-64",
   };
 
   return (
@@ -28,7 +28,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         className,
         sizeClasses[size],
         rounded ? "rounded-full" : "rounded",
-        "bg-gray-300"
+        "bg-gray-300 object-cover"
       )}
       src={src}
       alt={alt}

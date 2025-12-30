@@ -10,14 +10,9 @@ interface IThemeCard {
   onSelect: (theme: TThemes) => void;
 }
 
-export const ThemeCard: React.FC<IThemeCard> = ({
-  id,
-  name,
-  theme,
-  onSelect,
-}) => {
+export const ThemeCard: React.FC<IThemeCard> = ({ name, theme, onSelect }) => {
   const baseClasses =
-    "p-4 w-52 flex flex-col gap-1 justify-center items-center rounded-xl cursor-pointer hovertransition-transform duration-200 hover:scale-105 hover:shadow-lg active:scale-95";
+    "p-2 sm:p-3 w-28 sm:w-36 md:w-44 lg:w-52 flex-shrink-0 min-w-0 flex flex-col gap-2 justify-center items-center rounded-xl cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-lg active:scale-95";
 
   const bgThemes: Record<TThemes, string> = {
     classic: "bg-gray-100",
@@ -79,18 +74,16 @@ export const ThemeCard: React.FC<IThemeCard> = ({
   };
 
   return (
-    <li
-      key={id}
-      className={clsx(baseClasses, bgThemes[theme])}
-      onClick={() => onSelect(theme)}
-    >
-      <p className={textThemes[theme]}>{name}</p>
+    <div className={clsx(baseClasses, bgThemes[theme])} onClick={() => onSelect(theme)}>
+      <p className={clsx("text-sm sm:text-base md:text-base font-medium text-center truncate", textThemes[theme])} title={name}>
+        {name}
+      </p>
 
-      <div className="flex">
-        {themeColors[theme].map((theme, index) => (
-          <ColorCircle key={index} color={theme} />
+      <div className="flex flex-wrap justify-center items-center gap-1 mt-2">
+        {themeColors[theme].map((c, index) => (
+          <ColorCircle key={index} color={c} />
         ))}
       </div>
-    </li>
+    </div>
   );
 };

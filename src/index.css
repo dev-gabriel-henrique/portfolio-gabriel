@@ -3,6 +3,13 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 *:focus {

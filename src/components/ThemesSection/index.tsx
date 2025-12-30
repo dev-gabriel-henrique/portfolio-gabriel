@@ -51,7 +51,7 @@ export function ThemesSection() {
     <nav
       aria-hidden={!isOpen}
       className={`
-            bg-[var(--bg-secondary)] p-4 transition-all duration-300 ease-in-out
+            bg-[var(--bg-secondary)] p-2 sm:p-3 md:p-4 transition-all duration-300 ease-in-out
         ${
           isOpen
             ? "max-h-96 opacity-100 translate-y-0"
@@ -59,24 +59,19 @@ export function ThemesSection() {
         }
             `}
     >
-      <ul className="flex gap-1 flex-wrap justify-between items-center">
+      <div className="container mx-auto flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
         {themes.map((theme, index) => (
           <div
             key={theme.id}
             style={{ transitionDelay: `${index * 40}ms` }}
-            className={`
-                        transition-all duration-300
-                        ${
-                          isOpen
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-2"
-                        }
-                        `}
+            className={`transition-all duration-300 ${
+              isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
           >
             <ThemeCard {...theme} onSelect={handleSelect} />
           </div>
         ))}
-      </ul>
+      </div>
     </nav>
   );
 }
