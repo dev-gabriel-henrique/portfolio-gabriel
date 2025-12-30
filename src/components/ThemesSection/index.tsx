@@ -32,9 +32,12 @@ export function ThemesSection() {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme") as TThemes | null;
+    const themeToApply = (saved ?? "classic") as TThemes;
 
-    if (saved) {
-      document.documentElement.className = `theme-${saved}`;
+    document.documentElement.className = `theme-${themeToApply}`;
+
+    if (!saved) {
+      localStorage.setItem("theme", "classic");
     }
   }, []);
 
